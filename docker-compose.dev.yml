@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16.3-alpine
+    container_name: postgres_seat_booking
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespw
+      POSTGRES_DB: seat_booking
+    ports:
+      - '5432:5432'
