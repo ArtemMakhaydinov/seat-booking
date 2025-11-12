@@ -4,7 +4,8 @@ import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
-import { winstonConfig } from './logging/winston.logger';
+import { winstonConfig } from './logger/winston.logger';
+import { BookingModule } from './booking/booking.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { winstonConfig } from './logging/winston.logger';
     }),
     WinstonModule.forRoot(winstonConfig),
     PrismaModule,
+    BookingModule,
   ],
   controllers: [AppController],
   providers: [AppService],

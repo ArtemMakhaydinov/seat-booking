@@ -19,7 +19,7 @@ const seedEvent = async (
 };
 
 async function main() {
-  await seedEvent('Event 1', 100);
+  await seedEvent('Event 1', 5);
 }
 
 main()
