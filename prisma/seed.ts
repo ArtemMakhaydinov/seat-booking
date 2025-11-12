@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { Events, PrismaClient } = require('./client');
+const { Events, PrismaClient } = require('../node_modules/.prisma/client');
 
 const prisma = new PrismaClient();
 

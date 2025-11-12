@@ -1,4 +1,3 @@
-import { bigintReplacer } from 'src/utils/bigint-replacer';
 import winston, { format, transports } from 'winston';
 
 const colorizer = format.colorize({
@@ -17,7 +16,7 @@ const getDefaultFormat = format.combine(
   }),
   format.printf((info) => {
     const { level, timestamp, message, ...rest } = info;
-    return ` ${timestamp}  [${level}]:${message}  ${JSON.stringify(rest, bigintReplacer)}`;
+    return ` ${timestamp}  [${level}]:${message}  ${JSON.stringify(rest)}`;
   }),
 );
 

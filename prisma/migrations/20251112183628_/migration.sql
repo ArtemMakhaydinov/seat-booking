@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "Events" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "total_seats" INTEGER NOT NULL,
 
@@ -9,8 +9,8 @@ CREATE TABLE "Events" (
 
 -- CreateTable
 CREATE TABLE "Bookings" (
-    "id" BIGSERIAL NOT NULL,
-    "event_id" BIGINT NOT NULL,
+    "id" SERIAL NOT NULL,
+    "event_id" INTEGER NOT NULL,
     "user_id" TEXT NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

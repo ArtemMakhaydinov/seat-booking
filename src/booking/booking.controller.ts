@@ -10,7 +10,6 @@ import { BookingService } from './booking.service';
 import Ajv from 'ajv';
 import { reservePostSchema } from './schemas';
 import { HTTP_ERRORS_BY_MESSAGE } from './const/error-messages';
-import { bigintReplacer } from 'src/utils/bigint-replacer';
 
 @Controller('api/bookings')
 export class BookingController {
@@ -36,8 +35,7 @@ export class BookingController {
     }
 
     try {
-      const record = await this.bookingService.checkAndCreateBooking(body);
-      return JSON.stringify(record, bigintReplacer);
+      return await this.bookingService.checkAndCreateBooking(body);
     } catch (error) {
       const httpError =
         HTTP_ERRORS_BY_MESSAGE[error.message] || InternalServerErrorException;

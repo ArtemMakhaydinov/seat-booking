@@ -15,15 +15,15 @@ datasource db {
 }
 
 model Events {
-  id          BigInt     @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   name        String
   total_seats Int
   bookings    Bookings[]
 }
 
 model Bookings {
-  id         BigInt   @id @default(autoincrement())
-  event_id   BigInt
+  id         Int      @id @default(autoincrement())
+  event_id   Int
   event      Events   @relation(fields: [event_id], references: [id])
   user_id    String
   created_at DateTime @default(now())
